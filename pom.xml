@@ -1,0 +1,219 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.test</groupId>
+  <artifactId>Annotation-ssm</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+	<!--spring版本号 -->
+	<spring.version>4.3.8.RELEASE</spring.version>
+	<!--mybatis版本号 -->
+	<mybatis.version>3.3.0</mybatis.version>
+	<!--log4j日志文件管理包版本 -->
+	<slf4j.version>1.7.7</slf4j.version>
+	<slf4j.version>1.2.17</slf4j.version>
+	
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+       <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
+	</properties>
+<build>
+	<resources>
+         <resource>
+             <directory>src/main/java</directory>
+             <includes>
+                 <include>**/*.properties</include>
+                 <include>**/*.xml</include>
+             </includes>
+             <filtering>false</filtering>
+         </resource>
+     </resources>
+</build>
+
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+		</dependency>
+
+
+		<!-- 添加 Spring依赖 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!--spring核心包 -->
+
+		<!--spring单元测试依赖 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+
+		<!--mybatis核心包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<!--mybatis核心包 -->
+
+		<!--mybatis-spring包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<!--mybatis-spring包 -->
+
+		<!--导入数据库连接jar包 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.30</version>
+		</dependency>
+		<!--导入数据库连接jar包 -->
+
+		<!-- 导入jbcp的jar,用来在application.xml中配置数据库， 如jndi，是主流数据库连接池之一 -->
+		<!-- <dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+		</dependency> -->
+		<!-- 导入jbcp的jar,用来在application.xml中配置数据库， 如jndi，是主流数据库连接池之一 -->
+
+		<!-- JSTL标签类 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- JSTL标签类 -->
+
+		<!-- ehcache 相关依赖 -->
+		<!-- <dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>3.1.3</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-ehcache -->
+		<!-- <dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-ehcache</artifactId>
+			<version>1.0.0</version>
+		</dependency> -->
+
+
+		<!-- 序列化：将对象转换为JSON字符串 String strJson=JSON.toJSONString(实体对象); 反序列化： UserInfo 
+			userInfo=JSON.parseObject(json,UserInfo.class); -->
+		 <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.24</version>
+        </dependency>
+		<!-- 数据库连接池druid、 用于数据库字段加、解密 -->
+		<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.20</version>
+		</dependency>
+<!-- 映入JSON -->
+		<!-- <dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency> -->		
+
+<!--Log4j2配置-->  
+      <dependency>  
+          <groupId>org.apache.logging.log4j</groupId>  
+          <artifactId>log4j-api</artifactId>  
+          <version>2.5</version>  
+      </dependency>  
+      <dependency>  
+          <groupId>org.apache.logging.log4j</groupId>  
+          <artifactId>log4j-core</artifactId>  
+          <version>2.5</version>  
+      </dependency>  
+      <dependency>  
+          <groupId>org.apache.logging.log4j</groupId>  
+          <artifactId>log4j-web</artifactId>  
+          <version>2.5</version>  
+      </dependency>  
+      <!--解决Spring使用slf4j输出日志与log4j冲突的问题-->  
+      <dependency>  
+          <groupId>org.slf4j</groupId>  
+          <artifactId>slf4j-log4j12</artifactId>  
+          <version>1.7.13</version>  
+      </dependency> 
+
+	</dependencies>
+</project>
