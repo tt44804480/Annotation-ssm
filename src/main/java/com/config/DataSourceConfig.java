@@ -7,7 +7,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
-@Configuration
+@Configuration 
 public class DataSourceConfig {
 
 	@Value("${jdbc.username}")
