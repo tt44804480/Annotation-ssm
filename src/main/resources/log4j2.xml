@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!-- status=debug 可以查看log4j的装配过程 -->  
+<configuration status="off" monitorInterval="1800">  
+    <appenders>  
+        <Console name="Console" target="SYSTEM_OUT" follow="true">  
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%class{36} %L:%M] - %msg%xEx%n" /> 
+        </Console>  
+        <RollingRandomAccessFile name="DevLog" fileName="${sys:catalina.home}/logs/history.log"  
+            filePattern="log/$${date:yyyy-MM}/history-%d{MM-dd-yyyy}-%i.log">  
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%class{36} %L:%M] - %msg%xEx%n" />  
+            <Policies>  
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>  
+            </Policies>  
+            <DefaultRolloverStrategy max="200"/>
+        </RollingRandomAccessFile> 
+    </appenders>  
+    
+    <loggers>  
+        <logger name="com.maptechinc" level="debug" additivity="true">  
+            <AppenderRef ref="Console"/>  
+        </logger>  
+        
+        <logger name="java.sql.PreparedStatement" level="debug" additivity="false">  
+            <AppenderRef ref="Console"/>  
+        </logger>  
+        <logger name="xxxx.xxx.dao" level="debug" additivity="true">  
+            <AppenderRef ref="Console"/>  
+        </logger>  
+        
+        <root level="trace" includeLocation="true">  
+            <appender-ref ref="Console" />  
+        </root>  
+    </loggers>  
+</configuration>
