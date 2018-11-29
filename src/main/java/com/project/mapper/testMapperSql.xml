@@ -8,5 +8,13 @@
    <select id="queryVillageById" parameterType="String" resultType="com.project.entity.VillageEntity">
      select * from landmanage_village where id = #{id}
    </select>
+
+    <select id="querycusById" parameterType="String" resultType="map">
+        select * from customer
+        <if test="_parameter != null">
+            where cus_id = #{cus_id}
+        </if>
+    </select>
+
  
  </mapper>
