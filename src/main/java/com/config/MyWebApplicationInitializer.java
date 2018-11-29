@@ -13,9 +13,7 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer{
 	public void onStartup(ServletContext servletContext)
 			throws ServletException {
 		System.out.println("我启动了");
-		 CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-	     characterEncodingFilter.setEncoding("UTF-8");
-	     characterEncodingFilter.setForceEncoding(true);
+		 CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter("UTF-8",true,true);
 		 Dynamic characterEncodingFilterDynamic = servletContext.addFilter("encodingFilter", characterEncodingFilter);
 		 characterEncodingFilterDynamic.addMappingForUrlPatterns(null, true, "/*");
 		
