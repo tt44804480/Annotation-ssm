@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -26,6 +27,7 @@ import com.alibaba.fastjson.support.spring.FastJsonpResponseBodyAdvice;
 
 @Configuration
 @EnableWebMvc
+@EnableAspectJAutoProxy
 @ComponentScan(value={"com.config","com.project"},includeFilters={
 		@Filter(type=FilterType.ANNOTATION,value=Controller.class)
 },useDefaultFilters=false)
