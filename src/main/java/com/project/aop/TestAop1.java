@@ -11,7 +11,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Aspect
-@Component
+@Component 
 public class TestAop1 {
 
 	@Pointcut("execution(public Object com.project.controller.TestController.test1(String))")

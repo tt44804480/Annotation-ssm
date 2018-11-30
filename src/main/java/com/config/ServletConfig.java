@@ -27,7 +27,7 @@ import com.alibaba.fastjson.support.spring.FastJsonpResponseBodyAdvice;
 
 @Configuration
 @EnableWebMvc
-@EnableAspectJAutoProxy 
+@EnableAspectJAutoProxy
 @ComponentScan(value={"com.config","com.project"},includeFilters={
 		@Filter(type=FilterType.ANNOTATION,value=Controller.class)
 },useDefaultFilters=false)
