@@ -1,5 +1,7 @@
 package com.project.entity;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 public class VillageEntity implements Serializable {
@@ -8,6 +10,8 @@ public class VillageEntity implements Serializable {
 	
 	private String id;
 	private String cid;
+
+	@NotNull(message = "{NotNull.villageEntity.address}")
 	private String address;
 	private String telephone;
 	private String villagehead;
@@ -16,6 +20,7 @@ public class VillageEntity implements Serializable {
 	private String name;
 	private String areaofthegenus;
 	private int datatype;
+
 	public String getId() {
 		return id;
 	}
