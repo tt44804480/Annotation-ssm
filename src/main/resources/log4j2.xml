@@ -17,7 +17,7 @@
     </appenders>  
     
     <loggers>  
-        <logger name="com.maptechinc" level="debug" additivity="true">  
+        <logger name="com.project" level="debug" additivity="true">
             <AppenderRef ref="Console"/>  
         </logger>  
         
@@ -28,7 +28,7 @@
             <AppenderRef ref="Console"/>  
         </logger>  
         
-        <root level="trace" includeLocation="true">  
+        <root level="debug" includeLocation="true">
             <appender-ref ref="Console" />  
         </root>  
     </loggers>  

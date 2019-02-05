@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-@ComponentScan(value={"com.config","com.project"},excludeFilters={
+@ComponentScan(value={"com.config","com.project","com.common","com.activemqProcessor"},excludeFilters={
 		@Filter(type=FilterType.ANNOTATION,value={Controller.class})})
 @PropertySource(value = {"classpath:db.properties"})
 @EnableTransactionManagement
