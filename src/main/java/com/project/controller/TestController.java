@@ -60,5 +60,11 @@ public class TestController {
 
 		return null;
 	}
+
+	@ResponseBody
+	@RequestMapping("/testBranch")
+	public void testBranch(){
+
+    }
 	
 }
